@@ -4,19 +4,20 @@ describe('Pokedex', function() {
     cy.contains('ivysaur')
     cy.contains('Pokémon and Pokémon character names are trademarks of Nintendo.')
   })
-  it('pokemon page can be opened and renders abilities', function() {
+  it('pokemon page can be navigated to and renders abilities', function() {
     cy.visit('http://localhost:5000')
     cy.get('.list-item').eq(0).click()
+    cy.contains('bulbasaur')
     cy.contains('Hidden ability')
     cy.contains('speed')
     cy.contains('attack')
     cy.contains('chlorophyll')
-
-
+    cy.contains('overgrow')
   })
-  it('should render previous and next urls if they exist', function() {
+  it('pokemon page should render previous and next urls if they exist', function() {
     cy.visit('http://localhost:5000')
     cy.get('.list-item').eq(1).click()
+    cy.contains('ivysaur')
     cy.contains('Previous')
     cy.contains('Next')
     cy.contains('Home')
