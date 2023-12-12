@@ -25,6 +25,8 @@ primary_region = "lhr"
   processes = ["app"]
 
 [[services]]
+  internal_port = 3000
+  processes = ["app"]
   [[services.http_checks]]
       interval = 10000
       grace_period = "5s"
