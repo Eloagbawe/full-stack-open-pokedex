@@ -1,5 +1,11 @@
 #!/bin/bash
 
-echo "Hello from shell script"
+# echo "Hello from shell script"
+res=$(curl -s http://localhost:3000/health)
 
-exit 0
+if [[ "$res" == "ok" ]]
+then
+    exit 0
+else
+    exit 1
+fi
